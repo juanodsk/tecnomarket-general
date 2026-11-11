@@ -1,0 +1,69 @@
+HELP.md
+target/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# Environment files
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Logs and runtime dumps
+logs/
+*.log
+hs_err_pid*
+replay_pid*
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# Packaged artifacts
+*.jar
+*.war
+*.ear
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+# local AI skills
+skills/
+
+# Local Bruno API collections and environments
+/bruno/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini

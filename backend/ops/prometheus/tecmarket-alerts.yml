@@ -1,0 +1,73 @@
+groups:
+  - name: tecmarket-pilot
+    rules:
+      - alert: TecMarketBackendDown
+        expr: up{job="tecmarket-backend"} == 0
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: TecMarket backend is unavailable
+
+      - alert: TecMarketHighServerErrorRate
+        expr: |
+          sum(rate(http_server_requests_seconds_count{job="tecmarket-backend",status=~"5.."}[5m]))
+          /
+          clamp_min(sum(rate(http_server_requests_seconds_count{job="tecmarket-backend"}[5m])), 1)
+          > 0.05
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: More than 5 percent of TecMarket requests return 5xx
+
+      - alert: TecMarketHighP95Latency
+        expr: |
+          histogram_quantile(0.95,
+            sum by (le) (rate(http_server_requests_seconds_bucket{job="tecmarket-backend"}[5m]))) > 1.5
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: TecMarket p95 latency is above 1.5 seconds
+
+      - alert: TecMarketLoginFailureBurst
+        expr: |
+          sum(rate(http_server_requests_seconds_count{
+            job="tecmarket-backend",
+            uri="/api/v1/auth/login",
+            status=~"401|429|503"
+          }[5m])) > 0.5
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: TecMarket login failures or abuse protection responses increased
+
+      - alert: TecMarketDatabasePoolExhausted
+        expr: hikaricp_connections_pending{job="tecmarket-backend"} > 0
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: TecMarket is waiting for PostgreSQL connections
+
+      - alert: TecMarketJvmMemoryPressure
+        expr: |
+          sum(jvm_memory_used_bytes{job="tecmarket-backend",area="heap"})
+          /
+          clamp_min(sum(jvm_memory_max_bytes{job="tecmarket-backend",area="heap"}), 1)
+          > 0.85
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: TecMarket JVM heap usage is above 85 percent
+
+      - alert: TecMarketTlsCertificateExpiresSoon
+        expr: probe_ssl_earliest_cert_expiry{job="tecmarket-blackbox"} - time() < 1209600
+        for: 1h
+        labels:
+          severity: warning
+        annotations:
+          summary: A TecMarket TLS certificate expires in less than 14 days

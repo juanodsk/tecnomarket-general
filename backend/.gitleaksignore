@@ -1,0 +1,16 @@
+# Historical test-only placeholder replaced by a dynamically composed value.
+392f79aced6181069e72d9ee41a70627d596b32f:src/test/java/com/tecmarket/backend/config/ProductionConfigurationValidatorTest.java:generic-api-key:30
+
+# Revoked local Bruno credentials retained only in historical commits.
+2908b35120d0ae4b2b8c5fcffd9b639c578909ef:bruno/TECNOMARKET/environments/Local.bru:jwt:8
+2908b35120d0ae4b2b8c5fcffd9b639c578909ef:bruno/TECNOMARKET/environments/Local.bru:generic-api-key:7
+72c5616c4ecb568b577103b15dbbd8dc531371a9:bruno/TECNOMARKET/environments/Local.bru:jwt:8
+72c5616c4ecb568b577103b15dbbd8dc531371a9:bruno/TECNOMARKET/environments/Local.bru:generic-api-key:7
+4d0dd365dd36b02f943f34596d0ce56ae82de272:bruno/TECNOMARKET/environments/Local.bru:jwt:8
+d8c7ff06c860a4a8332891d7ff1363dfcd387018:bruno/TECNOMARKET/environments/Local.bru:jwt:8
+d8c7ff06c860a4a8332891d7ff1363dfcd387018:bruno/TECNOMARKET/environments/Local.bru:generic-api-key:7
+ec06b49b003415e67a331852f07af6ced0f80802:bruno/TECNOMARKET/environments/Local.bru:jwt:5
+9d4f9297dbf179922872be24bf316cc70ab976b8:bruno/TECNOMARKET/environments/Local.bru:jwt:5
+
+# Revoked Resend credential retained only in the initial example-file history.
+9d4f9297dbf179922872be24bf316cc70ab976b8:.env.example:generic-api-key:19

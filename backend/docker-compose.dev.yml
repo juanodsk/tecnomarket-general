@@ -1,0 +1,63 @@
+services:
+  redis:
+    image: redis:8-alpine@sha256:becdda6c7f4b3fb42e42fd7f120bbf5c54c4caaaf16f26da24e4563d2c1f0576
+    command: ["redis-server", "--appendonly", "yes"]
+    environment:
+      REDIS_PASSWORD: local-development-only
+    volumes:
+      - redis_data:/data
+    networks:
+      - tecmarket
+
+  postgres:
+    image: postgres:17-alpine@sha256:18cfe3ef5e6815560c98237d6216d1e5119702fb0f3894c8785dd58b8bbe5d73
+    environment:
+      POSTGRES_USER: ${SPRING_DATASOURCE_USERNAME:-tecmarket_user}
+      POSTGRES_PASSWORD: ${SPRING_DATASOURCE_PASSWORD:-tecmarket_password}
+      POSTGRES_DB: tecmarket_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - tecmarket
+
+  backend:
+    image: ${BACKEND_IMAGE:-tecmarket-backend:local}
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        APP_VERSION: ${APP_VERSION:-0.0.1-SNAPSHOT}
+        VCS_REF: ${IMAGE_REVISION:-local}
+        BUILD_DATE: ${IMAGE_BUILD_DATE:-local}
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+      - redis
+    environment:
+      RATE_LIMIT_REDIS_ENABLED: "true"
+      SPRING_DATA_REDIS_HOST: redis
+      SPRING_DATA_REDIS_PASSWORD: ""
+      SPRING_PROFILES_ACTIVE: docker
+      REFRESH_COOKIE_SECURE: "false"
+      REFRESH_COOKIE_REQUIRE_ORIGIN: "false"
+      STORAGE_MINIO_ENABLED: "false"
+      SPRINGDOC_API_DOCS_ENABLED: "true"
+      SPRINGDOC_SWAGGER_UI_ENABLED: "true"
+
+  adminer:
+    image: adminer:5-standalone@sha256:1596436ca8559900018ad4f3da275c66cc7032d0ee4a29e32f13349c96405106
+    profiles: ["ops"]
+    restart: unless-stopped
+    environment:
+      ADMINER_DEFAULT_SERVER: postgres
+    ports:
+      - "8081:8080"
+    networks:
+      - tecmarket
+
+volumes:
+  postgres_data:
+  redis_data:

@@ -1,0 +1,131 @@
+name: Backend security and release gate
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - develop
+      - test
+      - "refactor/**"
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: "21"
+          cache: maven
+      - name: Reject whitespace and conflict markers
+        run: |
+          git diff --check
+          ! git grep -nE '^(<<<<<<<|=======|>>>>>>>)'
+          bash -n ops/*.sh
+          bash -n qa/*.sh
+          docker compose --env-file .env.docker.example config --quiet
+      - name: Compile, test and validate Flyway on PostgreSQL
+        run: ./mvnw -B verify
+      - name: Generate CycloneDX SBOM
+        run: ./mvnw -B org.cyclonedx:cyclonedx-maven-plugin:2.9.1:makeAggregateBom -DskipTests
+      - uses: actions/upload-artifact@v4
+        with:
+          name: backend-jar-and-sbom
+          path: |
+            target/*.jar
+            target/bom.json
+            target/bom.xml
+
+  secret-scan:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      pull-requests: read
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - uses: gitleaks/gitleaks-action@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITLEAKS_ENABLE_COMMENTS: "false"
+
+  container-scan:
+    needs: verify
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: docker/setup-buildx-action@v3
+      - name: Build verified image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          load: true
+          pull: true
+          tags: tecmarket-backend:ci
+          build-args: |
+            APP_VERSION=0.0.1-${{ github.run_number }}
+            VCS_REF=${{ github.sha }}
+            BUILD_DATE=${{ github.event.repository.updated_at }}
+      - name: Verify immutable image metadata and runtime policy
+        shell: bash
+        run: |
+          test "$(docker image inspect tecmarket-backend:ci --format '{{ index .Config.Labels "org.opencontainers.image.revision" }}')" = "${GITHUB_SHA}"
+          test "$(docker image inspect tecmarket-backend:ci --format '{{ .Config.User }}')" = "tecmarket"
+          docker image inspect tecmarket-backend:ci --format '{{json .Config.Healthcheck.Test}}' | grep -q '/actuator/health/readiness'
+      - name: Scan image and generate SARIF
+        uses: aquasecurity/trivy-action@v0.36.0
+        with:
+          image-ref: tecmarket-backend:ci
+          format: sarif
+          output: trivy-results.sarif
+          severity: CRITICAL,HIGH
+          ignore-unfixed: true
+          exit-code: "0"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: trivy-sarif
+          path: trivy-results.sarif
+      - name: Enforce container vulnerability gate
+        run: >-
+          trivy image
+          --exit-code 1
+          --ignore-unfixed
+          --severity CRITICAL,HIGH
+          --format table
+          tecmarket-backend:ci
+      - name: Smoke production container with real dependencies
+        run: bash qa/container-smoke.sh tecmarket-backend:ci
+
+  codeql:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: github/codeql-action/init@v4
+        with:
+          languages: java-kotlin
+      - uses: github/codeql-action/autobuild@v4
+      - uses: github/codeql-action/analyze@v4
+        with:
+          upload: never
+          output: codeql-results
+      - uses: actions/upload-artifact@v4
+        with:
+          name: codeql-sarif
+          path: codeql-results/*.sarif
+      - name: Enforce CodeQL security gate
+        shell: bash
+        run: |
+          mapfile -t sarif_files < <(find codeql-results -type f -name '*.sarif')
+          test "${#sarif_files[@]}" -gt 0
+          jq -s -e '[.[].runs[].results[]? | select(.level == "error" or .level == "warning")] | length == 0' "${sarif_files[@]}"

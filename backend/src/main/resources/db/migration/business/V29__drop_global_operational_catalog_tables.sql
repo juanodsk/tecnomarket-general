@@ -1,0 +1,9 @@
+DROP TABLE IF EXISTS service_category;
+DROP TABLE IF EXISTS device_type;
+DROP TABLE IF EXISTS brand;
+DROP TABLE IF EXISTS appointment_status;
+DROP TABLE IF EXISTS repair_order_status;
+DROP TABLE IF EXISTS quotation_status;
+DROP TABLE IF EXISTS item_category;
+DROP TABLE IF EXISTS movement_type;
+DROP TABLE IF EXISTS payment_method;

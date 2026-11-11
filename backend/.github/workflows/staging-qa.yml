@@ -1,0 +1,79 @@
+name: Staging DAST and load gate
+
+on:
+  workflow_dispatch:
+    inputs:
+      target_url:
+        description: HTTPS base URL of the isolated staging environment
+        required: true
+        type: string
+      run_load:
+        description: Run the read-only k6 pilot scenario
+        required: true
+        default: false
+        type: boolean
+      business_id:
+        description: Synthetic QA business ID used only when load is enabled
+        required: false
+        default: "1"
+        type: string
+      order_id:
+        description: Synthetic QA order ID for attachment reads
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: staging-qa
+  cancel-in-progress: false
+
+jobs:
+  dast:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment: staging
+    steps:
+      - uses: actions/checkout@v5
+      - name: Run passive OWASP ZAP baseline
+        env:
+          QA_TARGET_URL: ${{ inputs.target_url }}
+        run: bash qa/dast-zap.sh
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: staging-zap-report
+          path: target/qa/zap
+
+  load:
+    if: ${{ inputs.run_load }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment: staging
+    steps:
+      - uses: actions/checkout@v5
+      - name: Run read-only MVP load scenario
+        env:
+          QA_BASE_URL: ${{ inputs.target_url }}
+          QA_EMAIL: ${{ secrets.QA_EMAIL }}
+          QA_PASSWORD: ${{ secrets.QA_PASSWORD }}
+          QA_BUSINESS_ID: ${{ inputs.business_id }}
+          QA_ORDER_ID: ${{ inputs.order_id }}
+        run: |
+          mkdir -p target/qa/k6
+          docker run --rm \
+            -e QA_BASE_URL \
+            -e QA_EMAIL \
+            -e QA_PASSWORD \
+            -e QA_BUSINESS_ID \
+            -e QA_ORDER_ID \
+            -v "$PWD/qa/load:/scripts:ro" \
+            -v "$PWD/target/qa/k6:/results:rw" \
+            grafana/k6:latest@sha256:5221b620a4f874faff6e32ba597aa667c058391fe4898b1c6f6377f062c6cdec \
+            run --summary-export=/results/summary.json /scripts/k6-mvp.js
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: staging-k6-report
+          path: target/qa/k6
