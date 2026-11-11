@@ -1,0 +1,167 @@
+- generic [ref=f1e1]:
+  - alert [ref=f1e2]
+  - generic [ref=f1e3]:
+    - button "Abrir menú" [ref=f1e299] [cursor=pointer]
+    - complementary [aria-hidden] [ref=f1e4]:
+      - link [ref=f1e301] [cursor=pointer]:
+        - /url: /app
+        - generic [aria-hidden] [ref=f1e7]: T
+        - generic [ref=f1e8]: TecMarket
+      - navigation [ref=f1e302]:
+        - paragraph [ref=f1e10]: General
+        - link [ref=f1e303] [cursor=pointer]:
+          - /url: /app
+          - text: Resumen
+        - link [ref=f1e304] [cursor=pointer]:
+          - /url: /app/negocios/1
+          - text: TecnoLab Medellín
+        - link [ref=f1e305] [cursor=pointer]:
+          - /url: /app/negocios/1/sedes
+          - text: Sedes
+        - link [ref=f1e306] [cursor=pointer]:
+          - /url: /app/negocios/1/equipo
+          - text: Equipo
+        - link [ref=f1e307] [cursor=pointer]:
+          - /url: /app/negocios/1/servicios
+          - text: Servicios
+        - link [ref=f1e308] [cursor=pointer]:
+          - /url: /app/negocios/1/horarios
+          - text: Horarios
+        - link [ref=f1e309] [cursor=pointer]:
+          - /url: /app/negocios/1/pruebas
+          - text: Pruebas de recepción
+        - link [ref=f1e310] [cursor=pointer]:
+          - /url: /app/negocios/1/clientes
+          - text: Clientes y dispositivos
+        - paragraph [ref=f1e47]: Cuenta
+        - link [ref=f1e311] [cursor=pointer]:
+          - /url: /app/perfil
+          - text: Perfil
+        - link [ref=f1e312] [cursor=pointer]:
+          - /url: /app/seguridad
+          - text: Seguridad
+        - link [ref=f1e313] [cursor=pointer]:
+          - /url: /app/sesiones
+          - text: Sesiones
+      - generic [ref=f1e60]:
+        - generic [ref=f1e61]:
+          - generic [ref=f1e62]: AM
+          - generic [ref=f1e63]:
+            - strong [ref=f1e64]: Andrea Mora
+            - generic [ref=f1e65]: andrea@tecmarket.test
+        - button [ref=f1e314] [cursor=pointer]: Cerrar sesión
+    - generic [ref=f1e70]:
+      - banner [ref=f1e71]:
+        - button "Negocio TecnoLab Medellín Sede El Poblado" [ref=f1e74] [cursor=pointer]:
+          - generic [ref=f1e80]:
+            - generic [ref=f1e81]: Negocio
+            - strong [ref=f1e82]: TecnoLab Medellín
+            - generic [ref=f1e83]: Sede El Poblado
+        - button "Usar tema claro" [active] [ref=f1e315] [cursor=pointer]
+      - main [ref=f1e87]:
+        - generic [ref=f1e88]:
+          - generic [ref=f1e89]:
+            - generic [ref=f1e90]:
+              - heading "Clientes y dispositivos" [level=1] [ref=f1e91]
+              - paragraph [ref=f1e92]: Consulta quién confió un equipo a TecnoLab Medellín y conserva su identificación técnica.
+            - button "Registrar dispositivo" [ref=f1e93] [cursor=pointer]
+          - generic [ref=f1e95]:
+            - generic [ref=f1e96]:
+              - generic [ref=f1e103]:
+                - heading "Directorio operativo" [level=2] [ref=f1e104]
+                - paragraph [ref=f1e105]: Clientes agrupados con los equipos registrados en este negocio.
+              - generic [ref=f1e106]:
+                - generic [ref=f1e107]: 2 clientes
+                - strong [ref=f1e108]: 3 dispositivos activos
+            - generic [ref=f1e109]:
+              - generic [ref=f1e114]:
+                - generic [ref=f1e115]: Buscar en el directorio
+                - searchbox "Buscar en el directorio" [ref=f1e116]
+              - generic [ref=f1e117]:
+                - generic [ref=f1e121]:
+                  - generic [ref=f1e122]: Tipo de dispositivo
+                  - strong [ref=f1e123]: Todos
+                - combobox "Tipo de dispositivo Todos" [ref=f1e126] [cursor=pointer]:
+                  - option "Todos los dispositivos" [selected]
+                  - option "Celular"
+                  - option "Portátil"
+            - generic [ref=f1e127]:
+              - generic [ref=f1e128]:
+                - generic [ref=f1e129]:
+                  - generic [aria-hidden] [ref=f1e130]: LG
+                  - generic [ref=f1e131]:
+                    - heading "Laura Gómez" [level=3] [ref=f1e132]
+                    - paragraph [ref=f1e133]:
+                      - text: CC 1032456789
+                      - generic [aria-hidden] [ref=f1e143]: ·
+                      - text: laura.gomez@email.test
+                  - generic [ref=f1e147]: 2 equipos
+                  - button "Añadir equipo" [ref=f1e148] [cursor=pointer]
+                - generic [ref=f1e150]:
+                  - article [ref=f1e151]:
+                    - generic [ref=f1e155]:
+                      - generic [ref=f1e156]:
+                        - heading "Apple iPhone 13 Pro" [level=3] [ref=f1e157]
+                        - generic [ref=f1e158]: Celular
+                      - paragraph [ref=f1e159]: Azul · Registrado el 22 de sept de 2026
+                    - generic [ref=f1e160]:
+                      - generic [ref=f1e161]:
+                        - term [ref=f1e162]: Serie
+                        - definition [ref=f1e163]: F2LXY09K0D
+                      - generic [ref=f1e164]:
+                        - term [ref=f1e165]: IMEI
+                        - definition [ref=f1e166]: "351756051523999"
+                    - generic [ref=f1e167]:
+                      - generic [ref=f1e168]: Recibido por
+                      - strong [ref=f1e169]: Andrea Mora
+                    - button "Editar" [ref=f1e170] [cursor=pointer]
+                  - article [ref=f1e174]:
+                    - generic [ref=f1e178]:
+                      - generic [ref=f1e179]:
+                        - heading "Lenovo ThinkPad T14" [level=3] [ref=f1e180]
+                        - generic [ref=f1e181]: Portátil
+                      - paragraph [ref=f1e182]: Negro · Registrado el 10 de sept de 2026
+                    - generic [ref=f1e183]:
+                      - generic [ref=f1e184]:
+                        - term [ref=f1e185]: Serie
+                        - definition [ref=f1e186]: PF4M20QJ
+                      - generic [ref=f1e187]:
+                        - term [ref=f1e188]: IMEI
+                        - definition [ref=f1e189]: Sin registrar
+                    - generic [ref=f1e190]:
+                      - generic [ref=f1e191]: Recibido por
+                      - strong [ref=f1e192]: Andrea Mora
+                    - button "Editar" [ref=f1e193] [cursor=pointer]
+              - generic [ref=f1e197]:
+                - generic [ref=f1e198]:
+                  - generic [aria-hidden] [ref=f1e199]: MR
+                  - generic [ref=f1e200]:
+                    - heading "Mateo Ríos" [level=3] [ref=f1e201]
+                    - paragraph [ref=f1e202]:
+                      - text: CE 7845123
+                      - generic [aria-hidden] [ref=f1e212]: ·
+                      - text: mateo.rios@email.test
+                  - generic [ref=f1e216]: 1 equipo
+                  - button "Añadir equipo" [ref=f1e217] [cursor=pointer]
+                - article [ref=f1e220]:
+                  - generic [ref=f1e224]:
+                    - generic [ref=f1e225]:
+                      - heading "Samsung Galaxy S24" [level=3] [ref=f1e226]
+                      - generic [ref=f1e227]: Celular
+                    - paragraph [ref=f1e228]: Gris · Registrado el 20 de sept de 2026
+                  - generic [ref=f1e229]:
+                    - generic [ref=f1e230]:
+                      - term [ref=f1e231]: Serie
+                      - definition [ref=f1e232]: Sin registrar
+                    - generic [ref=f1e233]:
+                      - term [ref=f1e234]: IMEI
+                      - definition [ref=f1e235]: "356789012345678"
+                  - generic [ref=f1e236]:
+                    - generic [ref=f1e237]: Recibido por
+                    - strong [ref=f1e238]: Camila Torres
+                  - button "Editar" [ref=f1e239] [cursor=pointer]
+            - generic [ref=f1e243]:
+              - button "Actualizar directorio" [ref=f1e244] [cursor=pointer]
+              - paragraph [ref=f1e250]:
+                - strong [ref=f1e251]: Registro por negocio
+                - generic [ref=f1e252]: Los equipos de este directorio pertenecen únicamente al negocio seleccionado.

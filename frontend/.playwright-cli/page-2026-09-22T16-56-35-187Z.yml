@@ -1,0 +1,139 @@
+- generic [ref=e1]:
+  - alert [ref=e7]
+  - generic [ref=e8]:
+    - complementary [ref=e9]:
+      - link "TecMarket, ir al inicio" [ref=e11] [cursor=pointer]:
+        - /url: /app
+        - generic [aria-hidden] [ref=e12]: T
+        - generic [ref=e13]: TecMarket
+      - navigation "Navegación principal" [ref=e14]:
+        - paragraph [ref=e15]: General
+        - link "Resumen" [ref=e16] [cursor=pointer]:
+          - /url: /app
+        - link "TecnoLab Medellín" [ref=e22] [cursor=pointer]:
+          - /url: /app/negocios/1
+        - link "Sedes" [ref=e27] [cursor=pointer]:
+          - /url: /app/negocios/1/sedes
+        - link "Equipo" [ref=e31] [cursor=pointer]:
+          - /url: /app/negocios/1/equipo
+        - link "Servicios" [ref=e36] [cursor=pointer]:
+          - /url: /app/negocios/1/servicios
+        - link "Horarios" [ref=e39] [cursor=pointer]:
+          - /url: /app/negocios/1/horarios
+        - paragraph [ref=e44]: Cuenta
+        - link "Perfil" [ref=e45] [cursor=pointer]:
+          - /url: /app/perfil
+        - link "Seguridad" [ref=e49] [cursor=pointer]:
+          - /url: /app/seguridad
+        - link "Sesiones" [ref=e53] [cursor=pointer]:
+          - /url: /app/sesiones
+      - generic [ref=e57]:
+        - generic [ref=e58]:
+          - generic [ref=e59]: JP
+          - generic [ref=e60]:
+            - strong [ref=e61]: Juan Pérez
+            - generic [ref=e62]: juan@tecmarket.co
+        - button "Cerrar sesión" [ref=e63] [cursor=pointer]
+    - generic [ref=e67]:
+      - banner [ref=e68]:
+        - button "Negocio TecnoLab Medellín Sede El Poblado" [ref=e71] [cursor=pointer]:
+          - generic [ref=e77]:
+            - generic [ref=e78]: Negocio
+            - strong [ref=e79]: TecnoLab Medellín
+            - generic [ref=e80]: Sede El Poblado
+        - button "Usar tema oscuro" [ref=e83] [cursor=pointer]
+      - main [ref=e84]:
+        - generic [ref=e85]:
+          - generic [ref=e87]:
+            - heading "Horarios" [level=1] [ref=e88]
+            - paragraph [ref=e89]: Organiza las jornadas de atención de cada sede de TecnoLab Medellín.
+          - generic [ref=e90]:
+            - generic [ref=e91]:
+              - generic [ref=e98]:
+                - text: Agenda semanal
+                - heading "Sede El Poblado" [level=2] [ref=e99]
+                - paragraph [ref=e100]: "Carrera 43A # 10-25, Medellín"
+              - generic [ref=e104]:
+                - generic [ref=e105]: 4 jornadas
+                - strong [ref=e106]: 3 días con atención
+            - generic [ref=e107]:
+              - article [ref=e108]:
+                - generic [ref=e109]:
+                  - generic [ref=e110]: Lun
+                  - strong [ref=e111]: Lunes
+                - generic [ref=e112]:
+                  - generic [ref=e113]:
+                    - strong [ref=e117]: 08:00 — 12:00
+                    - button "Editar jornada del lunes de 08:00 a 12:00" [ref=e118] [cursor=pointer]
+                  - generic [ref=e122]:
+                    - strong [ref=e126]: 14:00 — 18:00
+                    - button "Editar jornada del lunes de 14:00 a 18:00" [ref=e127] [cursor=pointer]
+                - button "Añadir horario" [ref=e131] [cursor=pointer]
+              - article [ref=e133]:
+                - generic [ref=e134]:
+                  - generic [ref=e135]: Mar
+                  - strong [ref=e136]: Martes
+                - generic [ref=e138]:
+                  - strong [ref=e142]: 09:00 — 17:00
+                  - button "Editar jornada del martes de 09:00 a 17:00" [ref=e143] [cursor=pointer]
+                - button "Añadir horario" [ref=e147] [cursor=pointer]
+              - article [ref=e149]:
+                - generic [ref=e150]:
+                  - generic [ref=e151]: Mié
+                  - strong [ref=e152]: Miércoles
+                - generic [ref=e153]: Sin atención
+                - button "Añadir horario" [ref=e155] [cursor=pointer]
+              - article [ref=e157]:
+                - generic [ref=e158]:
+                  - generic [ref=e159]: Jue
+                  - strong [ref=e160]: Jueves
+                - generic [ref=e161]: Sin atención
+                - button "Añadir horario" [ref=e163] [cursor=pointer]
+              - article [ref=e165]:
+                - generic [ref=e166]:
+                  - generic [ref=e167]: Vie
+                  - strong [ref=e168]: Viernes
+                - generic [ref=e169]: Sin atención
+                - button "Añadir horario" [ref=e171] [cursor=pointer]
+              - article [ref=e173]:
+                - generic [ref=e174]:
+                  - generic [ref=e175]: Sáb
+                  - strong [ref=e176]: Sábado
+                - generic [ref=e178]:
+                  - strong [ref=e182]: 09:00 — 13:00
+                  - button "Editar jornada del sábado de 09:00 a 13:00" [ref=e183] [cursor=pointer]
+                - button "Añadir horario" [ref=e187] [cursor=pointer]
+              - article [ref=e189]:
+                - generic [ref=e190]:
+                  - generic [ref=e191]: Dom
+                  - strong [ref=e192]: Domingo
+                - generic [ref=e193]: Sin atención
+                - button "Añadir horario" [ref=e195] [cursor=pointer]
+            - generic [ref=e197]:
+              - button "Actualizar horarios" [ref=e198] [cursor=pointer]
+              - paragraph [ref=e204]:
+                - strong [ref=e205]: ¿Quieres trabajar otra sede?
+                - generic [ref=e206]: Cámbiala desde el selector superior y verás su propia agenda.
+          - dialog [ref=e208]:
+            - generic [ref=e209]:
+              - generic [ref=e210]:
+                - heading "Añadir jornada" [level=2] [ref=e211]
+                - paragraph [ref=e212]: Miércoles en Sede El Poblado
+              - button "Cerrar" [active] [ref=e213] [cursor=pointer]
+            - generic [ref=e217]:
+              - generic [ref=e223]:
+                - generic [ref=e224]: Sede seleccionada
+                - strong [ref=e225]: Sede El Poblado
+                - paragraph [ref=e226]: "Carrera 43A # 10-25, Medellín"
+              - group "Horario del miércoles" [ref=e227]:
+                - generic [ref=e229]:
+                  - generic [ref=e230]:
+                    - generic [ref=e231]: Hora de apertura
+                    - textbox "Hora de apertura" [ref=e232]: 08:00
+                  - generic [ref=e233]:
+                    - generic [ref=e234]: Hora de cierre
+                    - textbox "Hora de cierre" [ref=e235]: 17:00
+                - paragraph [ref=e236]: Puedes añadir otra jornada al mismo día, por ejemplo después del almuerzo.
+              - generic [ref=e238]:
+                - button "Cancelar" [ref=e239] [cursor=pointer]
+                - button "Añadir horario" [ref=e240] [cursor=pointer]

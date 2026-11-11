@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-13T16:36:00-05:00",
+  "title": "Design System: TecMarket",
+  "extensions": {
+    "colorMeta": {
+      "diagnostic-blue": { "role": "primary", "displayName": "Azul de diagnóstico", "canonical": "#2458d8", "tonalRamp": ["#07163f", "#0d2872", "#153ca5", "#2458d8", "#5d83e8", "#91adf2", "#c5d4fa", "#edf2ff"] },
+      "bench-background": { "role": "neutral", "displayName": "Fondo de banco", "canonical": "#f4f6f8", "tonalRamp": ["#1b1d20", "#363a3e", "#565b61", "#7b8188", "#a4aab0", "#cbd0d5", "#e7eaed", "#f4f6f8"] },
+      "technical-ink": { "role": "neutral", "displayName": "Tinta técnica", "canonical": "#111827", "tonalRamp": ["#111827", "#273143", "#465268", "#68758c", "#909caf", "#bac3cf", "#dce1e7", "#f3f5f7"] },
+      "verified": { "role": "secondary", "displayName": "Verde verificado", "canonical": "#087f6b", "tonalRamp": ["#042a24", "#06493e", "#076957", "#087f6b", "#2da18c", "#68c2b1", "#a7dfd4", "#e2f5f0"] },
+      "danger": { "role": "tertiary", "displayName": "Rojo de bloqueo", "canonical": "#c83243", "tonalRamp": ["#3c0d15", "#681823", "#952431", "#c83243", "#dc6673", "#e999a2", "#f4c8cd", "#fff0f2"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Mensajes públicos principales." },
+      "headline": { "displayName": "Headline", "purpose": "Títulos de páginas, paneles y estados." },
+      "body": { "displayName": "Body", "purpose": "Explicación y lectura operativa." },
+      "label": { "displayName": "Label", "purpose": "Controles y metadatos funcionales." }
+    },
+    "shadows": [
+      { "name": "inspection-elevation", "value": "0 20px 60px rgb(20 31 48 / 8%)", "purpose": "Paneles protagonistas en tema claro." },
+      { "name": "night-elevation", "value": "0 24px 70px rgb(0 0 0 / 28%)", "purpose": "Paneles protagonistas en tema oscuro." }
+    ],
+    "motion": [
+      { "name": "control-transition", "value": "180ms ease", "purpose": "Hover, borde, color y activación de controles." },
+      { "name": "spinner", "value": "900ms linear infinite", "purpose": "Actividad de carga; se reduce con prefers-reduced-motion." }
+    ],
+    "breakpoints": [
+      { "name": "navigation-collapse", "value": "900px" },
+      { "name": "compact-layout", "value": "620px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botón primario",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Acción principal única dentro de un formulario o estado.",
+      "html": "<button class=\"ds-button-primary\">Continuar</button>",
+      "css": ".ds-button-primary{min-height:44px;border:1px solid transparent;border-radius:7px;background:var(--tm-primary,#2458d8);color:#fff;padding:12px 16px;font:720 .88rem Inter,sans-serif;transition:background-color .18s ease,transform .18s ease}.ds-button-primary:hover{background:var(--tm-primary-hover,#1948bd)}.ds-button-primary:focus-visible{outline:3px solid color-mix(in srgb,var(--tm-primary,#2458d8) 60%,transparent);outline-offset:2px}.ds-button-primary:active{transform:translateY(1px)}"
+    },
+    {
+      "name": "Botón secundario",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Acción alternativa sin competir con la primaria.",
+      "html": "<button class=\"ds-button-secondary\">Cancelar</button>",
+      "css": ".ds-button-secondary{min-height:44px;border:1px solid var(--tm-line-strong,#b8c2cf);border-radius:7px;background:var(--tm-surface,#fff);color:var(--tm-ink,#111827);padding:12px 16px;font:720 .88rem Inter,sans-serif;transition:border-color .18s ease,color .18s ease}.ds-button-secondary:hover{border-color:var(--tm-primary,#2458d8);color:var(--tm-primary,#2458d8)}.ds-button-secondary:focus-visible{outline:3px solid color-mix(in srgb,var(--tm-primary,#2458d8) 60%,transparent);outline-offset:2px}"
+    },
+    {
+      "name": "Campo de texto",
+      "kind": "input",
+      "refersTo": "text-field",
+      "description": "Entrada compacta con etiqueta persistente y foco inequívoco.",
+      "html": "<label class=\"ds-field\"><span>Correo electrónico</span><input type=\"email\" placeholder=\"nombre@correo.com\"></label>",
+      "css": ".ds-field{display:grid;gap:7px;color:var(--tm-ink,#111827);font:730 .75rem Inter,sans-serif}.ds-field input{height:46px;border:1px solid var(--tm-line-strong,#b8c2cf);border-radius:6px;background:var(--tm-surface-raised,#fbfcfd);color:var(--tm-ink,#111827);padding:0 12px;font:400 .86rem Inter,sans-serif}.ds-field input::placeholder{color:var(--tm-muted,#526278);opacity:1}.ds-field input:hover{border-color:var(--tm-muted,#526278)}.ds-field input:focus{border-color:var(--tm-primary,#2458d8);box-shadow:0 0 0 3px color-mix(in srgb,var(--tm-primary,#2458d8) 13%,transparent);outline:none}"
+    },
+    {
+      "name": "Elemento de navegación activo",
+      "kind": "nav",
+      "description": "Contexto seleccionado dentro del shell empresarial.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\" aria-current=\"page\">Taller Central</a><a href=\"#\">Perfil</a></nav>",
+      "css": ".ds-nav{display:grid;gap:4px;width:220px;font:650 .78rem Inter,sans-serif}.ds-nav a{min-height:42px;border-radius:6px;color:var(--tm-muted,#526278);padding:11px 12px;text-decoration:none}.ds-nav a:hover{background:var(--tm-surface-raised,#fbfcfd);color:var(--tm-ink,#111827)}.ds-nav a[aria-current=page]{background:var(--tm-primary-soft,#eaf0ff);color:var(--tm-primary,#2458d8)}.ds-nav a:focus-visible{outline:3px solid color-mix(in srgb,var(--tm-primary,#2458d8) 60%,transparent);outline-offset:2px}"
+    },
+    {
+      "name": "Estado verificado",
+      "kind": "chip",
+      "refersTo": "status-verified",
+      "description": "Confirmación explícita del contexto activo.",
+      "html": "<span class=\"ds-status-verified\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>Contexto verificado</span>",
+      "css": ".ds-status-verified{display:inline-flex;align-items:center;gap:7px;border:1px solid color-mix(in srgb,var(--tm-verified,#087f6b) 35%,var(--tm-line,#dbe1e8));border-radius:999px;background:var(--tm-verified-soft,#e2f5f0);color:var(--tm-verified,#087f6b);padding:8px 11px;font:740 .66rem Inter,sans-serif}.ds-status-verified svg{width:14px;height:14px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "La mesa de diagnóstico",
+    "overview": "TecMarket se siente como una estación de trabajo técnica: precisa, sobria y preparada para inspeccionar información sin ruido. La interfaz prioriza trazabilidad, contexto y seguridad mediante superficies claras, divisores estructurales, estados explícitos y un azul de diagnóstico usado con moderación. La densidad es operativa, no decorativa.",
+    "keyCharacteristics": ["Geometría rectangular con esquinas discretamente suavizadas.", "Una sola familia tipográfica, Inter, con jerarquía por escala y peso.", "Azul para acción y foco; verde exclusivamente para estados verificados.", "Contexto de negocio, sede y progreso siempre visible cuando afecta la operación.", "Movimiento corto, funcional y compatible con reducción de movimiento."],
+    "rules": [
+      { "name": "The Semantic Signal Rule", "body": "El azul indica acción o foco, el verde confirma y el rojo bloquea; no intercambiar estos significados por decoración.", "section": "colors" },
+      { "name": "The Clear Heading Rule", "body": "Los títulos empiezan directamente con el contenido; no anteponer eyebrows, kickers ni numeración decorativa.", "section": "typography" },
+      { "name": "The Flat Workbench Rule", "body": "Las superficies operativas permanecen planas; una sombra debe comunicar jerarquía real, nunca adornar una tarjeta común.", "section": "elevation" }
+    ],
+    "dos": ["Do mantener negocio y sede visibles en cualquier ancho cuando exista contexto empresarial.", "Do usar estados con texto, icono y color semántico.", "Do conservar foco visible, contraste AA y áreas interactivas cercanas a 44px.", "Do construir menús empresariales únicamente desde permisos del contexto activo."],
+    "donts": ["Don't usar números si no representan una secuencia, un identificador o un dato real.", "Don't introducir slogans comerciales, fotografías o logotipos no aprobados.", "Don't ocultar la sede en móvil ni reutilizar una sede ausente del contexto recibido.", "Don't almacenar el access token ni tokens de correo en almacenamiento persistente."]
+  }
+}

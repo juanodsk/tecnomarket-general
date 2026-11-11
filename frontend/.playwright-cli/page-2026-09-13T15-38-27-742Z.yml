@@ -1,0 +1,41 @@
+- generic [active] [ref=e1]:
+  - button "Open Next.js Dev Tools" [ref=e101] [cursor=pointer]
+  - alert [ref=e108]
+  - main [ref=e116]:
+    - generic [ref=e117]:
+      - link "TecMarket, ir al inicio" [ref=e118] [cursor=pointer]:
+        - /url: /
+        - generic [aria-hidden] [ref=e119]: T
+        - generic [ref=e120]: TecMarket
+      - button "Usar tema claro" [ref=e121] [cursor=pointer]
+    - generic [ref=e128]:
+      - complementary "Flujo de acceso seguro" [ref=e129]:
+        - paragraph [ref=e130]: Identidad / acceso
+        - heading "Una sesión clara antes de tocar una orden." [level=2] [ref=e131]
+        - generic [aria-hidden] [ref=e132]:
+          - generic [ref=e133]: "01"
+          - generic [ref=e135]: "02"
+          - generic [ref=e137]: "03"
+        - paragraph [ref=e138]: La sesión se restaura con una cookie segura. El acceso al negocio y sus sedes se resuelve después de validar tu identidad.
+      - generic [ref=e139]:
+        - generic [ref=e140]:
+          - paragraph [ref=e141]: Acceso seguro
+          - heading "Continúa tu operación" [level=1] [ref=e142]
+          - paragraph [ref=e143]: Ingresa con tu cuenta global de TecMarket.
+        - generic [ref=e144]:
+          - generic [ref=e145]:
+            - generic [ref=e146]: Correo electrónico
+            - textbox "Correo electrónico" [ref=e147]:
+              - /placeholder: nombre@correo.com
+          - generic [ref=e148]:
+            - generic [ref=e149]: Contraseña
+            - generic [ref=e150]:
+              - textbox "Contraseña" [ref=e151]
+              - button "Mostrar contraseña" [ref=e152] [cursor=pointer]
+          - link "¿Olvidaste tu contraseña?" [ref=e157] [cursor=pointer]:
+            - /url: /recuperar-contrasena
+          - button "Ingresar" [ref=e158] [cursor=pointer]
+          - paragraph [ref=e161]:
+            - text: ¿Aún no tienes cuenta?
+            - link "Crear cuenta" [ref=e162] [cursor=pointer]:
+              - /url: /registro

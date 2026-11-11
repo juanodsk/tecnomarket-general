@@ -1,0 +1,145 @@
+- generic [ref=f2e1]:
+  - alert [ref=f2e7]
+  - generic [ref=f2e8]:
+    - complementary [ref=f2e9]:
+      - link "TecMarket, ir al inicio" [ref=f2e11] [cursor=pointer]:
+        - /url: /app
+        - generic [aria-hidden] [ref=f2e12]: T
+        - generic [ref=f2e13]: TecMarket
+      - navigation "Navegación principal" [ref=f2e14]:
+        - paragraph [ref=f2e15]: General
+        - link "Resumen" [ref=f2e16] [cursor=pointer]:
+          - /url: /app
+        - link "Tecno Centro" [ref=f2e22] [cursor=pointer]:
+          - /url: /app/negocios/1
+        - link "Sedes" [ref=f2e27] [cursor=pointer]:
+          - /url: /app/negocios/1/sedes
+        - link "Equipo" [ref=f2e31] [cursor=pointer]:
+          - /url: /app/negocios/1/equipo
+        - link "Servicios" [ref=f2e36] [cursor=pointer]:
+          - /url: /app/negocios/1/servicios
+        - paragraph [ref=f2e39]: Cuenta
+        - link "Perfil" [ref=f2e40] [cursor=pointer]:
+          - /url: /app/perfil
+        - link "Seguridad" [ref=f2e44] [cursor=pointer]:
+          - /url: /app/seguridad
+        - link "Sesiones" [ref=f2e48] [cursor=pointer]:
+          - /url: /app/sesiones
+      - generic [ref=f2e52]:
+        - generic [ref=f2e53]:
+          - generic [ref=f2e54]: MP
+          - generic [ref=f2e55]:
+            - strong [ref=f2e56]: María Pérez
+            - generic [ref=f2e57]: maria@tecmarket.test
+        - button "Cerrar sesión" [ref=f2e58] [cursor=pointer]
+    - generic [ref=f2e62]:
+      - banner [ref=f2e63]:
+        - button "Negocio Tecno Centro Sede Chapinero" [ref=f2e66] [cursor=pointer]:
+          - generic [ref=f2e72]:
+            - generic [ref=f2e73]: Negocio
+            - strong [ref=f2e74]: Tecno Centro
+            - generic [ref=f2e75]: Sede Chapinero
+        - button "Usar tema oscuro" [ref=f2e78] [cursor=pointer]
+      - main [ref=f2e79]:
+        - generic [ref=f2e80]:
+          - generic [ref=f2e81]:
+            - generic [ref=f2e82]:
+              - heading "Servicios" [level=1] [ref=f2e83]
+              - paragraph [ref=f2e84]: Define las atenciones que ofrece Tecno Centro y su estimación inicial.
+            - button "Nuevo servicio" [ref=f2e85] [cursor=pointer]
+          - generic [ref=f2e87]:
+            - generic [ref=f2e88]:
+              - generic [ref=f2e93]:
+                - heading "Oferta del negocio" [level=2] [ref=f2e94]
+                - paragraph [ref=f2e95]: Servicios activos organizados por equipo y categoría.
+              - generic [ref=f2e96]:
+                - generic [ref=f2e97]: 2 servicios activos
+                - strong [ref=f2e98]: 2 categorías en esta página
+            - generic [ref=f2e99]:
+              - article [ref=f2e100]:
+                - generic [ref=f2e104]:
+                  - generic [ref=f2e105]:
+                    - heading "Cambio de pantalla OLED" [level=3] [ref=f2e106]
+                    - generic [ref=f2e107]: Pantallas
+                  - paragraph [ref=f2e111]: Reemplazo de pantalla, instalación y prueba completa del módulo táctil.
+                - generic [ref=f2e112]:
+                  - generic [ref=f2e113]: Dispositivo
+                  - strong [ref=f2e114]: Celular
+                  - generic [ref=f2e115]: Pantallas
+                - generic [ref=f2e116]:
+                  - generic [ref=f2e117]: Estimación
+                  - strong [ref=f2e118]: "350.000"
+                  - generic [ref=f2e119]: 2 h
+                - button "Editar" [ref=f2e123] [cursor=pointer]
+              - article [ref=f2e127]:
+                - generic [ref=f2e131]:
+                  - generic [ref=f2e132]:
+                    - heading "Diagnóstico de carga" [level=3] [ref=f2e133]
+                    - generic [ref=f2e134]: Baterías y energía
+                  - paragraph [ref=f2e138]: Revisión del puerto, cargador y circuito de alimentación del equipo.
+                - generic [ref=f2e139]:
+                  - generic [ref=f2e140]: Dispositivo
+                  - strong [ref=f2e141]: Computador portátil
+                  - generic [ref=f2e142]: Baterías y energía
+                - generic [ref=f2e143]:
+                  - generic [ref=f2e144]: Estimación
+                  - strong [ref=f2e145]: "85.000"
+                  - generic [ref=f2e146]: 1 h 30 min
+                - button "Editar" [ref=f2e150] [cursor=pointer]
+            - generic [ref=f2e155]:
+              - button "Actualizar servicios" [ref=f2e156] [cursor=pointer]
+              - paragraph [ref=f2e162]:
+                - strong [ref=f2e163]: Estimaciones iniciales
+                - generic [ref=f2e164]: El precio y el tiempo pueden ajustarse durante el diagnóstico.
+          - dialog [ref=f2e166]:
+            - generic [ref=f2e167]:
+              - generic [ref=f2e168]:
+                - heading "Crear un servicio" [level=2] [ref=f2e169]
+                - paragraph [ref=f2e170]: Define qué equipo atiende, el valor base y el tiempo estimado.
+              - button "Cerrar" [active] [ref=f2e171] [cursor=pointer]
+            - generic [ref=f2e175]:
+              - group "Clasificación" [ref=f2e176]:
+                - generic [ref=f2e178]:
+                  - generic [ref=f2e179]:
+                    - generic [ref=f2e180]: Categoría del servicio
+                    - combobox "Categoría del servicio" [ref=f2e181] [cursor=pointer]:
+                      - option "Selecciona una categoría" [selected]
+                      - option "Pantallas"
+                      - option "Baterías y energía"
+                  - generic [ref=f2e182]:
+                    - generic [ref=f2e183]: Tipo de dispositivo
+                    - combobox "Tipo de dispositivo" [ref=f2e184] [cursor=pointer]:
+                      - option "Selecciona un dispositivo" [selected]
+                      - option "Celular"
+                      - option "Computador portátil"
+              - group "Información visible" [ref=f2e185]:
+                - generic [ref=f2e187]:
+                  - generic [ref=f2e188]:
+                    - generic [ref=f2e189]: Nombre del servicio
+                    - textbox "Nombre del servicio" [ref=f2e190]
+                  - generic [ref=f2e191]:
+                    - generic [ref=f2e192]: Descripción
+                    - textbox "Descripción" [ref=f2e193]
+                    - paragraph [ref=f2e194]: Explica de forma breve qué incluye la atención.
+              - group "Estimación" [ref=f2e195]:
+                - generic [ref=f2e197]:
+                  - generic [ref=f2e198]:
+                    - generic [ref=f2e199]: Precio base
+                    - textbox "Precio base" [ref=f2e200]:
+                      - /placeholder: "350000.00"
+                    - paragraph [ref=f2e201]: Valor mayor que cero; máximo dos decimales.
+                  - generic [ref=f2e202]:
+                    - generic [ref=f2e203]: Tiempo estimado (minutos)
+                    - textbox "Tiempo estimado (minutos)" [ref=f2e204]:
+                      - /placeholder: "120"
+                    - paragraph [ref=f2e205]: Usa minutos completos.
+              - group "Imagen del servicio" [ref=f2e206]:
+                - generic [ref=f2e214]:
+                  - strong [ref=f2e215]: Sin imagen
+                  - paragraph [ref=f2e216]: "JPG, PNG o WebP. Tamaño máximo: 10 MB."
+                  - generic [ref=f2e217] [cursor=pointer]:
+                    - text: Seleccionar imagen
+                    - button "Seleccionar imagen" [ref=f2e222]
+              - generic [ref=f2e223]:
+                - button "Cancelar" [ref=f2e224] [cursor=pointer]
+                - button "Crear servicio" [ref=f2e225] [cursor=pointer]

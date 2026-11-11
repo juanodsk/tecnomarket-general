@@ -1,0 +1,5 @@
+- generic [active] [ref=e1]:
+  - button "Open Next.js Dev Tools" [ref=e101] [cursor=pointer]
+  - alert [ref=e108]: Ingresar · TecMarket
+  - main [ref=e163]:
+    - paragraph [ref=e166]: Preparando tu espacio de trabajo

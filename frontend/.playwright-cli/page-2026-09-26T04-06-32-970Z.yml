@@ -1,0 +1,219 @@
+- generic [ref=f1e1]:
+  - alert [ref=f1e7]
+  - generic [ref=f1e8]:
+    - complementary [ref=f1e9]:
+      - link "TecMarket, ir al inicio" [ref=f1e11] [cursor=pointer]:
+        - /url: /app
+        - generic [aria-hidden] [ref=f1e12]: T
+        - generic [ref=f1e13]: TecMarket
+      - navigation "Navegación principal" [ref=f1e14]:
+        - paragraph [ref=f1e15]: General
+        - link "Resumen" [ref=f1e16] [cursor=pointer]:
+          - /url: /app
+        - link "Tecno Centro" [ref=f1e22] [cursor=pointer]:
+          - /url: /app/negocios/10
+        - link "Órdenes de reparación" [ref=f1e27] [cursor=pointer]:
+          - /url: /app/negocios/10/ordenes
+        - paragraph [ref=f1e31]: Cuenta
+        - link "Perfil" [ref=f1e32] [cursor=pointer]:
+          - /url: /app/perfil
+        - link "Seguridad" [ref=f1e36] [cursor=pointer]:
+          - /url: /app/seguridad
+        - link "Sesiones" [ref=f1e40] [cursor=pointer]:
+          - /url: /app/sesiones
+      - generic [ref=f1e44]:
+        - generic [ref=f1e45]:
+          - generic [ref=f1e46]: LM
+          - generic [ref=f1e47]:
+            - strong [ref=f1e48]: Laura Méndez
+            - generic [ref=f1e49]: laura@example.com
+        - button "Cerrar sesión" [ref=f1e50] [cursor=pointer]
+    - generic [ref=f1e54]:
+      - banner [ref=f1e55]:
+        - button "Negocio Tecno Centro Sede principal" [ref=f1e58] [cursor=pointer]:
+          - generic [ref=f1e64]:
+            - generic [ref=f1e65]: Negocio
+            - strong [ref=f1e66]: Tecno Centro
+            - generic [ref=f1e67]: Sede principal
+        - button "Usar tema oscuro" [ref=f1e70] [cursor=pointer]
+      - main [ref=f1e71]:
+        - generic [ref=f1e72]:
+          - generic [ref=f1e74]:
+            - heading "Órdenes de reparación" [level=1] [ref=f1e75]
+            - paragraph [ref=f1e76]: Recibe equipos, localiza cada servicio y consulta la información inicial registrada en Tecno Centro.
+          - form "Filtros de órdenes" [ref=f1e77]:
+            - generic [ref=f1e78]:
+              - generic [ref=f1e82]: Cliente
+              - textbox "Cliente" [ref=f1e83]:
+                - /placeholder: Nombre, documento o correo
+            - generic [ref=f1e84]:
+              - generic [ref=f1e88]: Número de orden
+              - textbox "Número de orden" [ref=f1e89]:
+                - /placeholder: OS-001-01-000001
+            - generic [ref=f1e90]:
+              - generic [ref=f1e91]: Sede
+              - combobox "Sede" [ref=f1e92] [cursor=pointer]:
+                - option "Todas" [selected]
+                - option "Sede principal"
+            - generic [ref=f1e93]:
+              - generic [ref=f1e94]: Estado
+              - combobox "Estado" [ref=f1e95] [cursor=pointer]:
+                - option "Todos" [selected]
+                - option "Recibida"
+                - option "En diagnóstico"
+                - option "Esperando aprobación"
+                - option "Esperando repuesto"
+                - option "En reparación"
+                - option "En pruebas"
+                - option "Lista para recoger"
+                - option "Entregada"
+                - option "Cancelada"
+            - generic [ref=f1e96]:
+              - generic [ref=f1e97]: Desde
+              - textbox "Desde" [ref=f1e98]
+            - generic [ref=f1e99]:
+              - generic [ref=f1e100]: Hasta
+              - textbox "Hasta" [ref=f1e101]
+            - generic [ref=f1e102]:
+              - button "Limpiar" [ref=f1e103] [cursor=pointer]
+              - button "Aplicar" [ref=f1e104] [cursor=pointer]
+          - generic [ref=f1e107]:
+            - generic [ref=f1e108]:
+              - generic [ref=f1e114]:
+                - heading "Registro operativo" [level=2] [ref=f1e115]
+                - paragraph [ref=f1e116]: Órdenes visibles en las sedes permitidas para tu rol.
+              - paragraph [ref=f1e117]:
+                - generic [ref=f1e118]: Total encontrado
+                - strong [ref=f1e119]: 1 orden
+            - article [ref=f1e121]:
+              - generic [ref=f1e122]:
+                - strong [ref=f1e123]: OS-010-01-000001
+                - generic [ref=f1e124]: 23 de sept de 2026, 10:30 a. m.
+              - generic [ref=f1e130]:
+                - heading "María Pérez" [level=3] [ref=f1e131]
+                - paragraph [ref=f1e132]: maria@example.com
+              - generic [ref=f1e133]:
+                - paragraph [ref=f1e134]:
+                  - generic [ref=f1e137]: Apple iPhone 13 Pro
+                - paragraph [ref=f1e138]:
+                  - generic [ref=f1e141]: Diagnóstico de encendido
+                - paragraph [ref=f1e142]:
+                  - generic [ref=f1e146]: Sede principal
+              - generic [ref=f1e147]:
+                - generic [ref=f1e148]: Técnico asignado
+                - strong [ref=f1e149]: Andrés Torres
+                - generic [ref=f1e150]: $ 180.000
+              - generic [ref=f1e154]:
+                - generic [ref=f1e155]: Recibida
+                - button "Ver detalle" [ref=f1e160] [cursor=pointer]
+            - generic [ref=f1e164]:
+              - button "Actualizar órdenes" [ref=f1e165] [cursor=pointer]
+              - paragraph [ref=f1e171]:
+                - strong [ref=f1e172]: Página 1 de 1
+                - generic [ref=f1e173]: Mostrando 1 de 1 órdenes.
+              - generic "Paginación de órdenes" [ref=f1e174]:
+                - button "Página anterior" [disabled] [ref=f1e175]
+                - button "Página siguiente" [disabled] [ref=f1e178]
+          - dialog [ref=f1e188]:
+            - generic [ref=f1e189]:
+              - generic [ref=f1e190]:
+                - heading "Orden OS-010-01-000001" [level=2] [ref=f1e191]
+                - paragraph [ref=f1e192]: Información registrada al recibir el equipo.
+              - button "Cerrar" [ref=f1e193] [cursor=pointer]
+            - generic [ref=f1e197]:
+              - generic [ref=f1e198]:
+                - generic [ref=f1e199]: Recibida
+                - button "Cerrar cambio" [active] [ref=f1e294] [cursor=pointer]
+              - generic [ref=f1e295]:
+                - generic [ref=f1e296]:
+                  - generic [ref=f1e297]: Siguiente estado
+                  - combobox "Siguiente estado" [ref=f1e298] [cursor=pointer]:
+                    - option "En diagnóstico" [selected]
+                - generic [ref=f1e299]:
+                  - generic [ref=f1e300]: Comentario (opcional; hasta 2000 caracteres)
+                  - textbox "Comentario (opcional; hasta 2000 caracteres) 0/2000" [ref=f1e301]
+                  - generic [ref=f1e302]: 0/2000
+                - generic [ref=f1e303]:
+                  - generic [ref=f1e304]: Visibilidad del comentario
+                  - combobox "Visibilidad del comentario" [ref=f1e305] [cursor=pointer]:
+                    - option "Solo equipo del negocio" [selected]
+                    - option "Visible para el cliente"
+                - paragraph [ref=f1e306]: Los cambios de estado se registran en el historial. Si eliges visibilidad para el cliente, el comentario es obligatorio.
+                - generic [ref=f1e307]:
+                  - button "Cancelar" [ref=f1e308] [cursor=pointer]
+                  - button "Guardar estado" [ref=f1e309] [cursor=pointer]
+              - generic [ref=f1e205]:
+                - heading "Atención" [level=3] [ref=f1e206]
+                - generic [ref=f1e207]:
+                  - generic [ref=f1e208]:
+                    - term [ref=f1e209]: Sede
+                    - definition [ref=f1e210]: Sede principal
+                  - generic [ref=f1e211]:
+                    - term [ref=f1e212]: Servicio
+                    - definition [ref=f1e213]: Diagnóstico de encendido
+                  - generic [ref=f1e214]:
+                    - term [ref=f1e215]: Recibida
+                    - definition [ref=f1e216]: 23 de sept de 2026, 10:30 a. m.
+                  - generic [ref=f1e217]:
+                    - term [ref=f1e218]: Entrega estimada
+                    - definition [ref=f1e219]: 25 de sept de 2026, 05:00 p. m.
+                  - generic [ref=f1e220]:
+                    - term [ref=f1e221]: Recibió
+                    - definition [ref=f1e222]: Laura Méndez
+                  - generic [ref=f1e223]:
+                    - term [ref=f1e224]: Técnico
+                    - definition [ref=f1e225]: Andrés Torres
+              - generic [ref=f1e226]:
+                - heading "Cliente y equipo" [level=3] [ref=f1e227]
+                - generic [ref=f1e228]:
+                  - generic [ref=f1e229]:
+                    - term [ref=f1e230]: Cliente
+                    - definition [ref=f1e231]: María Pérez
+                  - generic [ref=f1e232]:
+                    - term [ref=f1e233]: Correo
+                    - definition [ref=f1e234]: maria@example.com
+                  - generic [ref=f1e235]:
+                    - term [ref=f1e236]: Dispositivo
+                    - definition [ref=f1e237]: Apple iPhone 13 Pro
+              - generic [ref=f1e238]:
+                - heading "Problema reportado" [level=3] [ref=f1e239]
+                - paragraph [ref=f1e240]: El equipo no enciende después de una caída.
+              - generic [ref=f1e241]:
+                - generic [ref=f1e242]:
+                  - heading "Diagnóstico técnico" [level=3] [ref=f1e243]
+                  - generic [ref=f1e244]: 0/2000
+                - generic [ref=f1e245]: Diagnóstico técnico
+                - textbox "Diagnóstico técnico" [ref=f1e246]:
+                  - /placeholder: Describe la causa identificada y los hallazgos técnicos.
+                - paragraph [ref=f1e247]: Este cambio quedará registrado en el historial interno de la orden.
+                - button "Guardar diagnóstico" [disabled] [ref=f1e248]
+              - region [ref=f1e253]:
+                - generic [ref=f1e254]:
+                  - heading "Evidencias fotográficas" [level=3] [ref=f1e255]
+                  - generic [ref=f1e259]:
+                    - generic [ref=f1e260]: 0 imágenes
+                    - button "Actualizar evidencias" [ref=f1e261] [cursor=pointer]
+                - paragraph [ref=f1e267]: Aún no hay evidencias asociadas a esta orden.
+              - region [ref=f1e268]:
+                - generic [ref=f1e269]:
+                  - heading "Historial de la orden" [level=3] [ref=f1e270]
+                  - generic [ref=f1e275]: 1 registro
+                - list [ref=f1e276]:
+                  - listitem [ref=f1e277]:
+                    - generic [ref=f1e279]:
+                      - paragraph [ref=f1e280]: Orden recibida.
+                      - generic [ref=f1e281]: Laura Méndez · 23 de sept de 2026, 10:30 a. m.
+                      - generic [ref=f1e282]: Registro interno
+              - generic [ref=f1e283]:
+                - heading "Valores" [level=3] [ref=f1e284]
+                - generic [ref=f1e285]:
+                  - generic [ref=f1e286]:
+                    - term [ref=f1e287]: Estimado
+                    - definition [ref=f1e288]: $ 180.000
+                  - generic [ref=f1e289]:
+                    - term [ref=f1e290]: Valor final
+                    - definition [ref=f1e291]: Pendiente
+            - button "Cerrar detalle" [ref=f1e293] [cursor=pointer]
+          - paragraph [ref=f1e184]:
+            - strong [ref=f1e185]: Acceso de consulta
+            - generic [ref=f1e186]: Puedes revisar las órdenes, pero tu rol no permite recibir equipos.
